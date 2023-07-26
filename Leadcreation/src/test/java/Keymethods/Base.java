@@ -269,6 +269,7 @@ public class Base extends HelpdeskPageobject {
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//i[@class='back']")).click();
 
 		} catch (Exception MyIntrest1) {
@@ -466,7 +467,7 @@ public class Base extends HelpdeskPageobject {
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
-
+			Thread.sleep(3000);
 			try {
 
 				driver.findElement(By.xpath("//i[@class='back']")).click();
@@ -618,7 +619,7 @@ public class Base extends HelpdeskPageobject {
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
-
+			Thread.sleep(3000);
 			try {
 
 				driver.findElement(By.xpath("//i[@class='back']")).click();
