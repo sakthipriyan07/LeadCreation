@@ -34,7 +34,7 @@ public class Base extends HelpdeskPageobject {
 	ExtentTest test;
 
 	ScreenShot screenshot = new ScreenShot();
-	SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMddyyyyHHMMSS");
+	SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMddyyHHMMSSSS");
 	String Date11 = dateFormat1.format(new Date());
 	SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMddyyyyM");
 	String Date12 = dateFormat2.format(new Date());
@@ -54,7 +54,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot1.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot1.png",
 							"VakilSearchURL launched").build());
 
 		} else {
@@ -63,7 +63,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.FAIL,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot1.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot1.png",
 							"VakilSearchURL").build());
 
 		}
@@ -75,7 +75,8 @@ public class Base extends HelpdeskPageobject {
 
 	public void PrivateLimited(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws IOException, InterruptedException, AWTException {
-
+		SimpleDateFormat dateFormat1PrivateLimited = new SimpleDateFormat("MMddyyMMS");
+		String Date11PrivateLimited = dateFormat1PrivateLimited.format(new Date());
 		test = extentreport.createTest("Private Limited Company");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Business Setup']")));
@@ -96,7 +97,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot2.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot2.png",
 							"PVT page Launched Total Time for load : " + totalTime + "ms").build());
 
 		} else {
@@ -105,7 +106,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.FAIL,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot2.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot2.png",
 							"PVT page Launched").build());
 
 		}
@@ -119,7 +120,7 @@ public class Base extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "Email Username notfound");
 		}
-		LoginPageobjects.Email.sendKeys("shakthi" + Date11 + "@yopmail.com");
+		LoginPageobjects.Email.sendKeys("shakthi" + Date11PrivateLimited + "@yopmail.com");
 
 		LoginPageobjects.Phonenumber.click();
 		if (LoginPageobjects.Phonenumber.isEnabled()) {
@@ -129,7 +130,7 @@ public class Base extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "Phonenumber field notfound");
 		}
-		LoginPageobjects.Phonenumber.sendKeys("9" + Date12);
+		LoginPageobjects.Phonenumber.sendKeys("9" + Date11PrivateLimited);
 		Thread.sleep(2000);
 		LoginPageobjects.City.click();
 		LoginPageobjects.City.sendKeys("chen");
@@ -145,7 +146,12 @@ public class Base extends HelpdeskPageobject {
 		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		wait.until(ExpectedConditions.elementToBeClickable(findElement12)).click();
 		Robot robot = new Robot();
-
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_MINUS);
+		robot.keyPress(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
 //		if (LoginPageobjects.whatsapptogleoff.isSelected()) {
 //
 //			test.log(Status.PASS, "whatsapptogle off");
@@ -169,7 +175,7 @@ public class Base extends HelpdeskPageobject {
 		String Date11 = dateFormat1.format(new Date());
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date11 + "\\Screenshot3.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date11 + "\\Screenshot3.png",
 						"After Submit details to QA Page Total Time for load " + totalTime1 + "ms").build());
 
 		Thread.sleep(1500);
@@ -227,7 +233,7 @@ public class Base extends HelpdeskPageobject {
 			String Date2 = dateFormat2.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date2 + "\\Screenshot4.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screenshot4.png",
 							"Payment Cart PageTotal Time for load " + totalTime21).build());
 		} catch (Exception SD) {
 			System.out.println(SD);
@@ -264,7 +270,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot4.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot4.png",
 							"Payment Cart PageTotal Time for page load " + totalTime2 + "ms").build());
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
@@ -278,7 +284,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot4.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot4.png",
 							"Retry Page Triggered").build());
 			System.out.println(MyIntrest1);
 		}
@@ -294,6 +300,8 @@ public class Base extends HelpdeskPageobject {
 
 	public void GstRegistration(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws InterruptedException, AWTException, IOException {
+		SimpleDateFormat dateFormat1GstRegistration = new SimpleDateFormat("MMddyyMMS");
+		String Date1GstRegistration = dateFormat1GstRegistration.format(new Date());
 		test = extentreport.createTest("GST Registration");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		HelpdeskPageobject.TaxCompliance.click();
@@ -309,7 +317,7 @@ public class Base extends HelpdeskPageobject {
 		String Date3 = dateFormat3.format(new Date());
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date3 + "\\Screenshot5.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date3 + "\\Screenshot5.png",
 						"Payment Cart PageTotal Time for page load " + totalTime + "ms").build());
 		// HelpdeskPageobject.GSTRegistration.click();
 
@@ -323,7 +331,7 @@ public class Base extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "Email Username notfound");
 		}
-		LoginPageobjects.Email.sendKeys("shakthi" + Date11 + "@yopmail.com");
+		LoginPageobjects.Email.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 
 		LoginPageobjects.Phonenumber.click();
 		if (LoginPageobjects.Phonenumber.isEnabled()) {
@@ -333,7 +341,7 @@ public class Base extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "Phonenumber field notfound");
 		}
-		LoginPageobjects.Phonenumber.sendKeys("9" + Date12);
+		LoginPageobjects.Phonenumber.sendKeys("9" + Date1GstRegistration);
 		Thread.sleep(2000);
 		LoginPageobjects.City.click();
 		LoginPageobjects.City.sendKeys("chen");
@@ -381,7 +389,7 @@ public class Base extends HelpdeskPageobject {
 			String Date2 = dateFormat2.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date2 + "\\Screensho49.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screensho49.png",
 							"Payment Cart PageTotal Time for page load " + totalTime1 + "ms").build());
 			Thread.sleep(2000);
 			LoginPageobjects.Next.click();
@@ -407,7 +415,7 @@ public class Base extends HelpdeskPageobject {
 			String Date2 = dateFormat2.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date2 + "\\Screensho49.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screensho49.png",
 							"Payment Cart PageTotal Time for page load " + totalTime1).build());
 			LoginPageobjects.Next.click();
 			System.out.println(e);
@@ -462,7 +470,7 @@ public class Base extends HelpdeskPageobject {
 			String Date4 = dateFormat4.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date4 + "\\Screenshot10.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date4 + "\\Screenshot10.png",
 							"Payment Cart PageTotal Time for page load " + totalTime2).build());
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
@@ -492,7 +500,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot10.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot10.png",
 							"Otp Validation / Payment Cart Page").build());
 			System.out.println("MyIntrest1");
 		}
@@ -506,6 +514,8 @@ public class Base extends HelpdeskPageobject {
 
 	public void TrademarkRegistration(WebDriver driver, String Username, String Mobilenumber,
 			ExtentReports extentreport) throws InterruptedException, AWTException, IOException {
+		SimpleDateFormat dateFormat1TrademarkRegistration = new SimpleDateFormat("MMddyyMMS");
+		String Date1TrademarkRegistration = dateFormat1TrademarkRegistration.format(new Date());
 		test = extentreport.createTest("Trademark Registration");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		HelpdeskPageobject.TrademarkIP.click();
@@ -522,7 +532,7 @@ public class Base extends HelpdeskPageobject {
 		String Date2 = dateFormat1.format(new Date());
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date2 + "\\Screenshot7.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screenshot7.png",
 						"Trademark Registration Time for page load " + totalTime + "ms").build());
 		// HelpdeskPageobject.GSTRegistration.click();
 
@@ -536,7 +546,7 @@ public class Base extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "Email Username notfound");
 		}
-		LoginPageobjects.Email.sendKeys("shakthi" + Date11 + "@yopmail.com");
+		LoginPageobjects.Email.sendKeys("shakthi" + Date1TrademarkRegistration + "@yopmail.com");
 
 		LoginPageobjects.PhonenumberTrademarkIP.click();
 		if (LoginPageobjects.PhonenumberTrademarkIP.isEnabled()) {
@@ -546,7 +556,7 @@ public class Base extends HelpdeskPageobject {
 
 			test.log(Status.FAIL, "Phonenumber field notfound");
 		}
-		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("9" + Date12);
+		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("9789955331");
 		Thread.sleep(2000);
 		LoginPageobjects.CityTrademark.click();
 		LoginPageobjects.CityTrademark.sendKeys("chen");
@@ -588,7 +598,7 @@ public class Base extends HelpdeskPageobject {
 		String Date3 = dateFormat2.format(new Date());
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date3 + "\\Screenshot8.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date3 + "\\Screenshot8.png",
 						"After Consult an Expert Click page load " + totalTime2 + "ms").build());
 		Thread.sleep(1500);
 
@@ -613,7 +623,7 @@ public class Base extends HelpdeskPageobject {
 			String Date4 = dateFormat4.format(new Date());
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date4 + "\\Screenshot9.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date4 + "\\Screenshot9.png",
 							"Payment Cart Page  Time for load " + totalTime2 + "ms").build());
 
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
@@ -642,7 +652,7 @@ public class Base extends HelpdeskPageobject {
 			String Date1 = dateFormat.format(new Date());
 			test.log(Status.FAIL,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation\\" + Date1 + "\\Screenshot9.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot9.png",
 							"Payment Cart Page").build());
 			System.out.println(MyIntrest1);
 		}
@@ -680,7 +690,7 @@ public class Base extends HelpdeskPageobject {
 		Tickets.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(8000);
-		try {
+		
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
@@ -723,10 +733,7 @@ public class Base extends HelpdeskPageobject {
 				test.log(Status.FAIL, "Need Help with : Trademark Registration lead Failed");
 			}
 
-		} catch (Exception Search) {
-			System.out.println(Search);
-
-		}
+	
 		// TODO Auto-generated method stub
 
 	}
