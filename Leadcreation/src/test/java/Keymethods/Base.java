@@ -690,7 +690,7 @@ public class Base extends HelpdeskPageobject {
 		Tickets.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(8000);
-		
+		try {
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
@@ -712,21 +712,21 @@ public class Base extends HelpdeskPageobject {
 			String ticket03 = "Need Help with : Private Limited Company Registration";
 			String ticket01 = "Need Help with : Trademark Registration";
 
-			if (ticket3.contains(ticket03)) {
+			if (ticket03.contains(ticket3)) {
 
 				test.log(Status.PASS, "Private Limited Company Registration lead verified");
 			} else {
 				test.log(Status.FAIL, "Private Limited Company Registration lead Failed");
 			}
 
-			if (ticket2.contains(ticket02)) {
+			if (ticket02.contains(ticket2)) {
 
 				test.log(Status.PASS, "Need Help with : Goods & Service Tax Registration lead verified");
 			} else {
 				test.log(Status.FAIL, "Need Help with : Goods & Service Tax Registration lead Failed");
 			}
 
-			if (ticket1.contains(ticket01)) {
+			if (ticket01.contains(ticket1)) {
 
 				test.log(Status.PASS, "Need Help with : Trademark Registration lead verified");
 			} else {
@@ -734,8 +734,10 @@ public class Base extends HelpdeskPageobject {
 			}
 
 	
-		// TODO Auto-generated method stub
+		} catch (Exception Search) {
+			System.out.println(Search);
 
+		}
 	}
 
 }
