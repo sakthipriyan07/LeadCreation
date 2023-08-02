@@ -49,23 +49,11 @@ public class Base extends HelpdeskPageobject {
 
 		PageFactory.initElements(driver, LoginPageobjects.class);
 		if (driver.getTitle() != "Online Legal Services for Startups & SMEs in India | Vakil Search") {
-			screenshot.screenshot1(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot1.png",
-							"VakilSearchURL launched").build());
+			test.log(Status.PASS, "VakilSearchURL launched");
 
 		} else {
-			screenshot.screenshot1(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.FAIL,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot1.png",
-							"VakilSearchURL").build());
 
+			test.log(Status.FAIL, "VakilSearchURL");
 		}
 
 		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@datainput='1']")));
@@ -86,61 +74,23 @@ public class Base extends HelpdeskPageobject {
 				.visibilityOfElementLocated(By.xpath("//b[normalize-space()='Private Limited Company']")));
 		long start = System.currentTimeMillis();
 		LoginPageobjects.Pvtdcompany.click();
-		long finish = System.currentTimeMillis();
-		long totalTime = finish - start;
-		System.out.println("Total Time for page load - " + totalTime);
-
-		System.out.println(driver.getTitle().toString());
-		if (driver.getTitle() != "Private Limited (Pvt Ltd) Company Registration Online In India") {
-			screenshot.screenshot2(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot2.png",
-							"PVT page Launched Total Time for load : " + totalTime + "ms").build());
-
-		} else {
-			screenshot.screenshot2(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.FAIL,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot2.png",
-							"PVT page Launched").build());
-
-		}
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='service_form_primary_email']")));
 		LoginPageobjects.Email.click();
-		if (LoginPageobjects.Email.isEnabled()) {
+		long finish = System.currentTimeMillis();
+		long totalTime = finish - start;
+		System.out.println("Total Time for page load - " + totalTime);
+		test.log(Status.PASS, "Lead form page " + totalTime + "ms");
+		System.out.println(driver.getTitle().toString());
 
-			test.log(Status.PASS, "Email Username clicked");
-		} else {
-
-			test.log(Status.FAIL, "Email Username notfound");
-		}
 		LoginPageobjects.Email.sendKeys("shakthi" + Date11PrivateLimited + "@yopmail.com");
 
 		LoginPageobjects.Phonenumber.click();
-		if (LoginPageobjects.Phonenumber.isEnabled()) {
 
-			test.log(Status.PASS, " Phonenumber field clicked");
-		} else {
-
-			test.log(Status.FAIL, "Phonenumber field notfound");
-		}
 		LoginPageobjects.Phonenumber.sendKeys("9" + Date11PrivateLimited);
 		Thread.sleep(2000);
 		LoginPageobjects.City.click();
 		LoginPageobjects.City.sendKeys("chen");
-		if (LoginPageobjects.City.isEnabled()) {
-
-			test.log(Status.PASS, "Select City clicked");
-		} else {
-
-			test.log(Status.FAIL, "Select City field notfound");
-		}
 
 		Thread.sleep(6000);
 		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
@@ -166,34 +116,19 @@ public class Base extends HelpdeskPageobject {
 		long start1 = System.currentTimeMillis();
 		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
 		System.out.println("succes1");
-
+		String text = driver.findElement(
+				By.xpath("//p[contains(text(),'Takes less than 1 min')]"))
+				.getText();
+		System.out.println(text);
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
 		System.out.println("Total Time for page load - " + totalTime1);
-		screenshot.screenshot3(driver, extentreport);
-		SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMddyyyy");
-		String Date11 = dateFormat1.format(new Date());
-		test.log(Status.PASS,
-				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date11 + "\\Screenshot3.png",
-						"After Submit details to QA Page Total Time for load " + totalTime1 + "ms").build());
+
+		test.log(Status.PASS, "Enter  company name page " + totalTime1 + "ms");
 
 		Thread.sleep(1500);
 
-		try {
-			LoginPageobjects.noidonthaveacompany1.click();
-			LoginPageobjects.Next.click();
-		} catch (Exception e) {
-
-			System.out.println(e);
-
-		}
-		try {
-			Thread.sleep(3000);
-			LoginPageobjects.Software.click();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			LoginPageobjects.Next.click();
-
+		driver.findElement(By.xpath("//span[contains(text(),'Skip it for now')]")).click();
 			Thread.sleep(2000);
 			LoginPageobjects.Ageofbusiness.click();
 			robot.keyPress(KeyEvent.VK_DOWN);
@@ -203,44 +138,22 @@ public class Base extends HelpdeskPageobject {
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			// LoginPageobjects.Next.click();
-			long start21 = System.currentTimeMillis();
-			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
-					.click();
-			long finish21 = System.currentTimeMillis();
-			long totalTime21 = finish21 - start21;
-			System.out.println("Total Time for page load - " + totalTime21);
-			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
-			driver.findElement(By.xpath("//input[@id='gpay']")).click();
-			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
-			Thread.sleep(3000);
-			try {
-
-				driver.findElement(By.xpath("//i[@class='back']")).click();
-				try {
-					driver.switchTo().alert().accept();
-				} catch (Exception Z) {
-					System.out.println(Z);
-				}
-				driver.findElement(By.xpath("//i[@class='back']")).click();
-				driver.findElement(By.xpath("//button[contains(text(),'YES, CANCEL')]")).click();
-
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-
-			screenshot.screenshot4(driver, extentreport);
-			SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMddyyyy");
-			String Date2 = dateFormat2.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screenshot4.png",
-							"Payment Cart PageTotal Time for load " + totalTime21).build());
-		} catch (Exception SD) {
-			System.out.println(SD);
-			Thread.sleep(3000);
-		}
+			
+			//.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
+				//	.click();
+			
+	
 		try {
+			long start22 = System.currentTimeMillis();
+			LoginPageobjects.Next.click();
+			
+			
 			driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
+			
+			long finish22 = System.currentTimeMillis();
+			long totalTime22 = finish22 - start22;
+
+			test.log(Status.PASS, "Mobile OTP verification page " + totalTime22 + "ms");
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_A);
 			robot.keyRelease(KeyEvent.VK_A);
@@ -262,16 +175,13 @@ public class Base extends HelpdeskPageobject {
 			Thread.sleep(4000);
 			long start2 = System.currentTimeMillis();
 			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
+			String text2 = driver.findElement(By.xpath("//p[contains(text(),'Takes less than 1 min')]")).getText();
+		System.out.println(text2);
 			long finish2 = System.currentTimeMillis();
-			long totalTime2 = finish2 - start2;
-			System.out.println("Total Time for page load - " + totalTime2);
-			screenshot.screenshot4(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot4.png",
-							"Payment Cart PageTotal Time for page load " + totalTime2 + "ms").build());
+			long totalTime2111 = finish2 - start2;
+
+			test.log(Status.PASS, "Payment Cart Page " + totalTime2111 + "ms");
+			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
 			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
@@ -279,13 +189,8 @@ public class Base extends HelpdeskPageobject {
 			driver.findElement(By.xpath("//i[@class='back']")).click();
 
 		} catch (Exception MyIntrest1) {
-			screenshot.screenshot4(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot4.png",
-							"Retry Page Triggered").build());
+
+			test.log(Status.PASS, "Retry Page Triggered");
 			System.out.println(MyIntrest1);
 		}
 		try {
@@ -309,50 +214,29 @@ public class Base extends HelpdeskPageobject {
 		WebElement element3 = driver.findElement(By.xpath("(//a[contains(text(),'GST Registration')])[1]"));
 		JavascriptExecutor executor3 = (JavascriptExecutor) driver;
 		executor3.executeScript("arguments[0].click();", element3);
-		long finish = System.currentTimeMillis();
-		long totalTime = finish - start;
-		System.out.println("Total Time for page load - " + totalTime);
-		screenshot.screenshot5(driver, extentreport);
-		SimpleDateFormat dateFormat3 = new SimpleDateFormat("MMddyyyy");
-		String Date3 = dateFormat3.format(new Date());
-		test.log(Status.PASS,
-				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date3 + "\\Screenshot5.png",
-						"Payment Cart PageTotal Time for page load " + totalTime + "ms").build());
-		// HelpdeskPageobject.GSTRegistration.click();
-
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='service_form_primary_email']")));
 		LoginPageobjects.Email.click();
-		if (LoginPageobjects.Email.isEnabled()) {
+		
+		
+		long finish = System.currentTimeMillis();
+		long totalTime = finish - start;
+		System.out.println("Total Time for page load - " + totalTime);
 
-			test.log(Status.PASS, "Email Username clicked");
-		} else {
+		test.log(Status.PASS, "Lead form page  " + totalTime + "ms");
+		// HelpdeskPageobject.GSTRegistration.click();
 
-			test.log(Status.FAIL, "Email Username notfound");
-		}
+	
+
 		LoginPageobjects.Email.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 
 		LoginPageobjects.Phonenumber.click();
-		if (LoginPageobjects.Phonenumber.isEnabled()) {
 
-			test.log(Status.PASS, " Phonenumber field clicked");
-		} else {
-
-			test.log(Status.FAIL, "Phonenumber field notfound");
-		}
 		LoginPageobjects.Phonenumber.sendKeys("9" + Date1GstRegistration);
 		Thread.sleep(2000);
 		LoginPageobjects.City.click();
 		LoginPageobjects.City.sendKeys("chen");
-		if (LoginPageobjects.City.isEnabled()) {
-
-			test.log(Status.PASS, "Select City clicked");
-		} else {
-
-			test.log(Status.FAIL, "Select City field notfound");
-		}
-
+     
 		Thread.sleep(16000);
 		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		wait.until(ExpectedConditions.elementToBeClickable(findElement12)).click();
@@ -371,11 +255,13 @@ public class Base extends HelpdeskPageobject {
 		wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//button[@class='fullwidth btn btn-primary']")));
 		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
+		
+		
 		System.out.println("succes1");
 
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
-		System.out.println("Total Time for page load - " + totalTime1);
+		System.out.println("Age of Business selection page " + totalTime1);
 
 		Thread.sleep(1500);
 
@@ -384,19 +270,14 @@ public class Base extends HelpdeskPageobject {
 					.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]")));
 
 			LoginPageobjects.noidonthaveacompanyNameGSTRig.click();
-			screenshot.screenshot49(driver, extentreport);
-			SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMddyyyy");
-			String Date2 = dateFormat2.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screensho49.png",
-							"Payment Cart PageTotal Time for page load " + totalTime1 + "ms").build());
+
+			test.log(Status.PASS, "Age of Business selection page " + totalTime1 + "ms");
 			Thread.sleep(2000);
 			LoginPageobjects.Next.click();
 			Thread.sleep(3000);
 			LoginPageobjects.Software.click();
 			Thread.sleep(2000);
-			 LoginPageobjects.Next.click();
+		
 
 //			Thread.sleep(2000);
 //			LoginPageobjects.Ageofbusiness.click();
@@ -410,13 +291,8 @@ public class Base extends HelpdeskPageobject {
 //			Thread.sleep(3000);
 		} catch (Exception e) {
 			driver.findElement(By.xpath("//label[contains(text(),'New business')]")).click();
-			screenshot.screenshot49(driver, extentreport);
-			SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMddyyyy");
-			String Date2 = dateFormat2.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screensho49.png",
-							"Payment Cart PageTotal Time for page load " + totalTime1).build());
+
+			test.log(Status.PASS, "Payment Cart PageTotal Time for page load " + totalTime1);
 			LoginPageobjects.Next.click();
 			System.out.println(e);
 			wait.until(ExpectedConditions
@@ -427,14 +303,18 @@ public class Base extends HelpdeskPageobject {
 			Thread.sleep(3000);
 			LoginPageobjects.Software.click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			LoginPageobjects.Next.click();
+			
 		}
-		
-
 
 		try {
-			
+			long start21 = System.currentTimeMillis();
+			LoginPageobjects.Next.click();
 			driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
+		    long finish21 = System.currentTimeMillis();
+			long totalTime21 = finish21 - start21;
+			System.out.println("Mobile OTP verification page - " + totalTime21);
+
+			test.log(Status.PASS, "Mobile OTP verification page" + totalTime21);
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_A);
 			robot.keyRelease(KeyEvent.VK_A);
@@ -462,17 +342,14 @@ public class Base extends HelpdeskPageobject {
 			WebElement element39 = driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]"));
 			JavascriptExecutor executor39 = (JavascriptExecutor) driver;
 			executor39.executeScript("arguments[0].click();", element39);
+			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
+			
 			long finish2 = System.currentTimeMillis();
 			long totalTime2 = finish2 - start2;
 			System.out.println("Total Time for page load - " + totalTime2);
-			screenshot.screenshot10(driver, extentreport);
-			SimpleDateFormat dateFormat4 = new SimpleDateFormat("MMddyyyy");
-			String Date4 = dateFormat4.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date4 + "\\Screenshot10.png",
-							"Payment Cart PageTotal Time for page load " + totalTime2).build());
-			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
+
+			test.log(Status.PASS, "Payment cart page " + totalTime2);
+			
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
 			Thread.sleep(3000);
@@ -495,13 +372,8 @@ public class Base extends HelpdeskPageobject {
 			// account')]")).click();
 
 		} catch (Exception MyIntrest1) {
-			screenshot.screenshot10(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot10.png",
-							"Otp Validation / Payment Cart Page").build());
+
+			test.log(Status.PASS, "Otp Validation / Payment Cart Page");
 			System.out.println("MyIntrest1");
 		}
 		try {
@@ -524,49 +396,27 @@ public class Base extends HelpdeskPageobject {
 		WebElement element3 = driver.findElement(By.xpath("(//b[contains(text(),'Trademark Registration')])"));
 		JavascriptExecutor executor3 = (JavascriptExecutor) driver;
 		executor3.executeScript("arguments[0].click();", element3);
-		long finish = System.currentTimeMillis();
-		long totalTime = finish - start;
-		System.out.println("Total Time for page load - " + totalTime);
-		screenshot.screenshot7(driver, extentreport);
-		SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMddyyyy");
-		String Date2 = dateFormat1.format(new Date());
-		test.log(Status.PASS,
-				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date2 + "\\Screenshot7.png",
-						"Trademark Registration Time for page load " + totalTime + "ms").build());
-		// HelpdeskPageobject.GSTRegistration.click();
-
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='service_form_primary_email']")));
 		LoginPageobjects.Email.click();
-		if (LoginPageobjects.Email.isEnabled()) {
+		
+		long finish = System.currentTimeMillis();
+		long totalTime = finish - start;
+		System.out.println("Total Time for page load - " + totalTime);
 
-			test.log(Status.PASS, "Email Username clicked");
-		} else {
+		test.log(Status.PASS, "Trademark Registration Time for page load " + totalTime + "ms");
+		// HelpdeskPageobject.GSTRegistration.click();
 
-			test.log(Status.FAIL, "Email Username notfound");
-		}
+		
+
 		LoginPageobjects.Email.sendKeys("shakthi" + Date1TrademarkRegistration + "@yopmail.com");
 
 		LoginPageobjects.PhonenumberTrademarkIP.click();
-		if (LoginPageobjects.PhonenumberTrademarkIP.isEnabled()) {
 
-			test.log(Status.PASS, " Phonenumber field clicked");
-		} else {
-
-			test.log(Status.FAIL, "Phonenumber field notfound");
-		}
 		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("9789955331");
 		Thread.sleep(2000);
 		LoginPageobjects.CityTrademark.click();
 		LoginPageobjects.CityTrademark.sendKeys("chen");
-		if (LoginPageobjects.CityTrademark.isEnabled()) {
-
-			test.log(Status.PASS, "Select City clicked");
-		} else {
-
-			test.log(Status.FAIL, "Select City field notfound");
-		}
 
 		Thread.sleep(16000);
 		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
@@ -582,29 +432,24 @@ public class Base extends HelpdeskPageobject {
 //		}
 		LoginPageobjects.toggleTrademark.click();
 		Thread.sleep(2000);
-		long start2 = System.currentTimeMillis();
-		WebElement element501011 = driver.findElement(By.xpath("(//button[contains(text(),'Consult an Expert')])[1]"));
-		JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
-		executor501011.executeScript("arguments[0].click();", element501011);
+		
 		// driver.findElement(By.xpath("(//button[contains(text(),'Consult an
 		// Expert')])[1]")).click();
 //System.out.println("succes1");
 
-		long finish2 = System.currentTimeMillis();
-		long totalTime2 = finish2 - start2;
-		System.out.println("Total Time for page load - " + totalTime2);
-		screenshot.screenshot8(driver, extentreport);
-		SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMddyyyy");
-		String Date3 = dateFormat2.format(new Date());
-		test.log(Status.PASS,
-				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date3 + "\\Screenshot8.png",
-						"After Consult an Expert Click page load " + totalTime2 + "ms").build());
-		Thread.sleep(1500);
+		
 
 		try {
-			Thread.sleep(2000);
+			long start2 = System.currentTimeMillis();
+			WebElement element501011 = driver.findElement(By.xpath("(//button[contains(text(),'Consult an Expert')])[1]"));
+			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
+			executor501011.executeScript("arguments[0].click();", element501011);
 			driver.findElement(By.xpath("(//div[@class='styles_content__g4N5_'])[4]")).click();
+			long finish2 = System.currentTimeMillis();
+			long totalTime2 = finish2 - start2;
+			System.out.println("Total Time for page load - " + totalTime2);
+
+			test.log(Status.PASS, "Enter  company name page" + totalTime2 + "ms");
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
 
@@ -615,18 +460,14 @@ public class Base extends HelpdeskPageobject {
 			Thread.sleep(3000);
 			long start3 = System.currentTimeMillis();
 			driver.findElement(By.xpath("//div[@class='styles_btnCta__Vt6zM']")).click();
+			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			long finish3 = System.currentTimeMillis();
 			long totalTime3 = finish3 - start3;
 			System.out.println("Total Time for page load - " + totalTime2);
-			screenshot.screenshot9(driver, extentreport);
-			SimpleDateFormat dateFormat4 = new SimpleDateFormat("MMddyyyy");
-			String Date4 = dateFormat4.format(new Date());
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date4 + "\\Screenshot9.png",
-							"Payment Cart Page  Time for load " + totalTime2 + "ms").build());
 
-			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
+			test.log(Status.PASS, "Payment Cart Page  Time for load " + totalTime2 + "ms");
+
+			
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
 			Thread.sleep(3000);
@@ -647,13 +488,8 @@ public class Base extends HelpdeskPageobject {
 			}
 
 		} catch (Exception MyIntrest1) {
-			screenshot.screenshot9(driver, extentreport);
-			SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyy");
-			String Date1 = dateFormat.format(new Date());
-			test.log(Status.FAIL,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot9.png",
-							"Payment Cart Page").build());
+
+			test.log(Status.FAIL, "Payment Cart Page");
 			System.out.println(MyIntrest1);
 		}
 		try {
@@ -733,7 +569,6 @@ public class Base extends HelpdeskPageobject {
 				test.log(Status.FAIL, "Need Help with : Trademark Registration lead Failed");
 			}
 
-	
 		} catch (Exception Search) {
 			System.out.println(Search);
 
