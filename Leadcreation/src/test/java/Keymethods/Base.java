@@ -173,16 +173,19 @@ public class Base extends HelpdeskPageobject {
 			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[4]"))
 					.sendKeys("0");
 			Thread.sleep(4000);
-			long start2 = System.currentTimeMillis();
+			
 			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
 			String text2 = driver.findElement(By.xpath("//p[contains(text(),'Takes less than 1 min')]")).getText();
 		System.out.println(text2);
+			
+			
+			long start2 = System.currentTimeMillis();
+			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
+			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			long finish2 = System.currentTimeMillis();
 			long totalTime2111 = finish2 - start2;
 
 			test.log(Status.PASS, "Payment Cart Page " + totalTime2111 + "ms");
-			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
-			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
 			driver.findElement(By.xpath("//input[@id='gpay']")).click();
 			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
 			Thread.sleep(3000);
