@@ -88,13 +88,20 @@ public class Base extends HelpdeskPageobject {
 		LoginPageobjects.Phonenumber.click();
 
 		LoginPageobjects.Phonenumber.sendKeys("9" + Date11PrivateLimited);
-		Thread.sleep(2000);
-		LoginPageobjects.City.click();
+		Thread.sleep(3000);
+		
+		
+		WebElement element310 = driver.findElement(By.xpath("//input[@placeholder='City*']"));
+		JavascriptExecutor executor310 = (JavascriptExecutor) driver;
+		executor310.executeScript("arguments[0].click();", element310);
+	//	LoginPageobjects.City.click();
 		LoginPageobjects.City.sendKeys("chen");
 
 		Thread.sleep(6000);
-		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
-		wait.until(ExpectedConditions.elementToBeClickable(findElement12)).click();
+			
+		WebElement element31 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
+		JavascriptExecutor executor31 = (JavascriptExecutor) driver;
+		executor31.executeScript("arguments[0].click();", element31);
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_MINUS);
@@ -116,6 +123,9 @@ public class Base extends HelpdeskPageobject {
 		long start1 = System.currentTimeMillis();
 		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
 		System.out.println("succes1");
+		
+		wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Takes less than 1 min')]")));
 		String text = driver.findElement(
 				By.xpath("//p[contains(text(),'Takes less than 1 min')]"))
 				.getText();
@@ -182,10 +192,8 @@ public class Base extends HelpdeskPageobject {
 		WebElement element3 = driver.findElement(By.xpath("(//a[contains(text(),'GST Registration')])[1]"));
 		JavascriptExecutor executor3 = (JavascriptExecutor) driver;
 		executor3.executeScript("arguments[0].click();", element3);
-		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='service_form_primary_email']")));
-		LoginPageobjects.Email.click();
-		
+		WebElement findElement = driver.findElement(By.xpath("//input[@id='inputForEmail']"));
+		findElement.click();
 		
 		long finish = System.currentTimeMillis();
 		long totalTime = finish - start;
@@ -196,9 +204,8 @@ public class Base extends HelpdeskPageobject {
 
 	
 
-		LoginPageobjects.Email.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
+findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 
-		LoginPageobjects.Phonenumber.click();
 
 		LoginPageobjects.Phonenumber.sendKeys("9" + Date1GstRegistration);
 		Thread.sleep(2000);
