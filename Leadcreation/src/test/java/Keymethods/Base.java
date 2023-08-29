@@ -36,7 +36,7 @@ public class Base extends HelpdeskPageobject {
 	ScreenShot screenshot = new ScreenShot();
 	SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMddyyHHMMSSSS");
 	String Date11 = dateFormat1.format(new Date());
-	SimpleDateFormat dateFormat2 = new SimpleDateFormat("MMddyyyyM");
+	SimpleDateFormat dateFormat2 = new SimpleDateFormat("wwyyyyhh");
 	String Date12 = dateFormat2.format(new Date());
 
 	public void Base1(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
@@ -87,18 +87,17 @@ public class Base extends HelpdeskPageobject {
 
 		LoginPageobjects.Phonenumber.click();
 
-		LoginPageobjects.Phonenumber.sendKeys("9" + Date11PrivateLimited);
+		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
 		Thread.sleep(3000);
-		
-		
+
 		WebElement element310 = driver.findElement(By.xpath("//input[@placeholder='City*']"));
 		JavascriptExecutor executor310 = (JavascriptExecutor) driver;
 		executor310.executeScript("arguments[0].click();", element310);
-	//	LoginPageobjects.City.click();
+		// LoginPageobjects.City.click();
 		LoginPageobjects.City.sendKeys("chen");
 
 		Thread.sleep(6000);
-			
+
 		WebElement element31 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		JavascriptExecutor executor31 = (JavascriptExecutor) driver;
 		executor31.executeScript("arguments[0].click();", element31);
@@ -123,12 +122,10 @@ public class Base extends HelpdeskPageobject {
 		long start1 = System.currentTimeMillis();
 		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
 		System.out.println("succes1");
-		
+
 		wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Takes less than 1 min')]")));
-		String text = driver.findElement(
-				By.xpath("//p[contains(text(),'Takes less than 1 min')]"))
-				.getText();
+		String text = driver.findElement(By.xpath("//p[contains(text(),'Takes less than 1 min')]")).getText();
 		System.out.println(text);
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
@@ -139,46 +136,40 @@ public class Base extends HelpdeskPageobject {
 		Thread.sleep(1500);
 
 		driver.findElement(By.xpath("//span[contains(text(),'Skip it for now')]")).click();
-			Thread.sleep(2000);
-			LoginPageobjects.Ageofbusiness.click();
-			robot.keyPress(KeyEvent.VK_DOWN);
-			robot.keyRelease(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		LoginPageobjects.Ageofbusiness.click();
+		robot.keyPress(KeyEvent.VK_DOWN);
+		robot.keyRelease(KeyEvent.VK_DOWN);
 
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			// LoginPageobjects.Next.click();
-			
-			//.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
-				//	.click();
-			
-	
-	
-			
-			
-			
-			long start21 = System.currentTimeMillis();
-			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
-					.click();
-			long finish21 = System.currentTimeMillis();
-			long totalTime21 = finish21 - start21;
-			System.out.println("Total Time for page load - " + totalTime21);
-			
-			
-			test.log(Status.PASS, "Mobile OTP verification page " + totalTime21 + "ms");
-			
-			
-			long start211 = System.currentTimeMillis();
-			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
-			wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to pay')]")));
-			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
-		
-			long finish2111 = System.currentTimeMillis();
-			long totalTime2111 = finish2111 - start211;
-			System.out.println("Total Time for page load - " + totalTime21);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		// LoginPageobjects.Next.click();
 
-			test.log(Status.PASS, "Mobile OTP verification page " + totalTime2111 + "ms");
+		// .findElement(By.xpath("//button[@class='styles_customBtn__nb6mV
+		// styles_next__NvT8q false false ']"))
+		// .click();
+
+		long start21 = System.currentTimeMillis();
+		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
+				.click();
+		long finish21 = System.currentTimeMillis();
+		long totalTime21 = finish21 - start21;
+		System.out.println("Total Time for page load - " + totalTime21);
+
+		test.log(Status.PASS, "Mobile OTP verification page " + totalTime21 + "ms");
+
+		long start211 = System.currentTimeMillis();
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to pay')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
+
+		long finish2111 = System.currentTimeMillis();
+		long totalTime2111 = finish2111 - start211;
+		System.out.println("Total Time for page load - " + totalTime21);
+
+		test.log(Status.PASS, "Mobile OTP verification page " + totalTime2111 + "ms");
 	}
 
 	public void GstRegistration(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
@@ -194,7 +185,7 @@ public class Base extends HelpdeskPageobject {
 		executor3.executeScript("arguments[0].click();", element3);
 		WebElement findElement = driver.findElement(By.xpath("//input[@id='inputForEmail']"));
 		findElement.click();
-		
+
 		long finish = System.currentTimeMillis();
 		long totalTime = finish - start;
 		System.out.println("Total Time for page load - " + totalTime);
@@ -202,19 +193,21 @@ public class Base extends HelpdeskPageobject {
 		test.log(Status.PASS, "Lead form page  " + totalTime + "ms");
 		// HelpdeskPageobject.GSTRegistration.click();
 
-	
+		findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 
-findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
-
-
-		LoginPageobjects.Phonenumber.sendKeys("9" + Date1GstRegistration);
+		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
 		Thread.sleep(2000);
-		LoginPageobjects.City.click();
-		LoginPageobjects.City.sendKeys("chen");
-     
-		Thread.sleep(16000);
-		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
-		wait.until(ExpectedConditions.elementToBeClickable(findElement12)).click();
+		WebElement findElement2 = driver.findElement(By.xpath("//input[@placeholder='City']"));
+		JavascriptExecutor findElement54 = (JavascriptExecutor) driver;
+		findElement54.executeScript("arguments[0].click();", findElement2);
+
+		findElement2.sendKeys("chen");
+		Thread.sleep(10000);
+		WebElement findElement222 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
+		JavascriptExecutor findElement5422 = (JavascriptExecutor) driver;
+		findElement5422.executeScript("arguments[0].click();", findElement222);
+		
+	
 		Robot robot = new Robot();
 
 //		if (LoginPageobjects.whatsapptogleoff.isSelected()) {
@@ -224,27 +217,28 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 //System.out.println("failed");
 //			test.log(Status.FAIL, "whatsapptogleoff Failed");
 //		}
-		LoginPageobjects.whatsapptogleoffGSTRegistration.click();
+
 		Thread.sleep(2000);
 		long start1 = System.currentTimeMillis();
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//button[@class='fullwidth btn btn-primary']")));
-		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
 		
+		WebElement element300 = driver.findElement(By.xpath("(//button[@class='styles_actionBtn__XNtcU'])[1]"));
+		JavascriptExecutor executor300 = (JavascriptExecutor) driver;
+		executor300.executeScript("arguments[0].click();", element300);
 		
+
 		System.out.println("succes1");
 
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
 		System.out.println("Age of Business selection page " + totalTime1);
 
-		Thread.sleep(1500);
+		Thread.sleep(3500);
 
 		try {
 			wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]")));
-
-			LoginPageobjects.noidonthaveacompanyNameGSTRig.click();
+					.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")));
+driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")).click();
+	
 
 			test.log(Status.PASS, "Age of Business selection page " + totalTime1 + "ms");
 			Thread.sleep(2000);
@@ -252,7 +246,6 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 			Thread.sleep(3000);
 			LoginPageobjects.Software.click();
 			Thread.sleep(2000);
-		
 
 //			Thread.sleep(2000);
 //			LoginPageobjects.Ageofbusiness.click();
@@ -265,6 +258,7 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 //
 //			Thread.sleep(3000);
 		} catch (Exception e) {
+			System.out.println(e);
 			driver.findElement(By.xpath("//label[contains(text(),'New business')]")).click();
 
 			test.log(Status.PASS, "Payment Cart PageTotal Time for page load " + totalTime1);
@@ -278,53 +272,53 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 			Thread.sleep(3000);
 			LoginPageobjects.Software.click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			
+
 		}
 
-		
-			long start21 = System.currentTimeMillis();
-			LoginPageobjects.Next.click();
-			driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
-		    long finish21 = System.currentTimeMillis();
-			long totalTime21 = finish21 - start21;
-			System.out.println("Mobile OTP verification page - " + totalTime21);
+		long start21 = System.currentTimeMillis();
+		LoginPageobjects.Next.click();
+		wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//input[@class='styles_otpInput__5bXLj']")));
+		driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
+		long finish21 = System.currentTimeMillis();
+		long totalTime21 = finish21 - start21;
+		System.out.println("Mobile OTP verification page - " + totalTime21);
 
-			test.log(Status.PASS, "Mobile OTP verification page" + totalTime21);
-//			robot.keyPress(KeyEvent.VK_CONTROL);
-//			robot.keyPress(KeyEvent.VK_A);
-//			robot.keyRelease(KeyEvent.VK_A);
-//			robot.keyRelease(KeyEvent.VK_CONTROL);
-//			robot.keyPress(KeyEvent.VK_DELETE);
-//			robot.keyRelease(KeyEvent.VK_DELETE);
-//			driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).sendKeys("9789955331");
-//			driver.findElement(By.xpath("//button[contains(text(),'Send OTP')]")).click();
-//			Thread.sleep(1500);
-//			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[1]"))
-//					.sendKeys("0");
-//			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[2]"))
-//					.sendKeys("0");
-//			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[3]"))
-//					.sendKeys("0");
-//			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[4]"))
-//					.sendKeys("0");
-//			Thread.sleep(3000);
-			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
+		test.log(Status.PASS, "Mobile OTP verification page" + totalTime21);
 			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_MINUS);
-			robot.keyRelease(KeyEvent.VK_MINUS);
+			robot.keyPress(KeyEvent.VK_A);
+			robot.keyRelease(KeyEvent.VK_A);
 			robot.keyRelease(KeyEvent.VK_CONTROL);
-			long start211 = System.currentTimeMillis();
-			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
-			wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to pay')]")));
-			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
-		
-			long finish2111 = System.currentTimeMillis();
-			long totalTime2111 = finish2111 - start211;
-			System.out.println("Total Time for page load - " + totalTime2111);
-			
-		
-		}
+			robot.keyPress(KeyEvent.VK_DELETE);
+			robot.keyRelease(KeyEvent.VK_DELETE);
+			driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).sendKeys("9789955331");
+			driver.findElement(By.xpath("//button[contains(text(),'Send OTP')]")).click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[1]"))
+					.sendKeys("0");
+			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[2]"))
+					.sendKeys("0");
+			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[3]"))
+					.sendKeys("0");
+			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[4]"))
+					.sendKeys("0");
+			Thread.sleep(3000);
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		long start211 = System.currentTimeMillis();
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to pay')]")));
+		driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
+
+		long finish2111 = System.currentTimeMillis();
+		long totalTime2111 = finish2111 - start211;
+		System.out.println("Total Time for page load - " + totalTime2111);
+
+	}
 
 	public void TrademarkRegistration(WebDriver driver, String Username, String Mobilenumber,
 			ExtentReports extentreport) throws InterruptedException, AWTException, IOException {
@@ -341,7 +335,7 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='service_form_primary_email']")));
 		LoginPageobjects.Email.click();
-		
+
 		long finish = System.currentTimeMillis();
 		long totalTime = finish - start;
 		System.out.println("Total Time for page load - " + totalTime);
@@ -349,20 +343,25 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 		test.log(Status.PASS, "Trademark Registration Time for page load " + totalTime + "ms");
 		// HelpdeskPageobject.GSTRegistration.click();
 
-		
-
 		LoginPageobjects.Email.sendKeys("shakthi" + Date1TrademarkRegistration + "@yopmail.com");
 
 		LoginPageobjects.PhonenumberTrademarkIP.click();
 
-		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("9789955331");
+		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("91" + Date12);
 		Thread.sleep(2000);
-		LoginPageobjects.CityTrademark.click();
+		
+		WebElement findElement12w = driver.findElement(By.xpath("//input[@placeholder='City']"));
+		JavascriptExecutor findElement122w = (JavascriptExecutor) driver;
+		findElement122w.executeScript("arguments[0].click();", findElement12w);
+	
 		LoginPageobjects.CityTrademark.sendKeys("chen");
 
-		Thread.sleep(16000);
+		Thread.sleep(10000);
 		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
-		wait.until(ExpectedConditions.elementToBeClickable(findElement12)).click();
+		JavascriptExecutor findElement122 = (JavascriptExecutor) driver;
+		findElement122.executeScript("arguments[0].click();", findElement12);
+		
+		
 		Robot robot = new Robot();
 
 //		if (LoginPageobjects.whatsapptogleoff.isSelected()) {
@@ -372,75 +371,42 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 //System.out.println("failed");
 //			test.log(Status.FAIL, "whatsapptogleoff Failed");
 //		}
-		LoginPageobjects.toggleTrademark.click();
+	//	LoginPageobjects.toggleTrademark.click();
 		Thread.sleep(2000);
-		
+
 		// driver.findElement(By.xpath("(//button[contains(text(),'Consult an
 		// Expert')])[1]")).click();
 //System.out.println("succes1");
 
 		
-
-		try {
 			long start2 = System.currentTimeMillis();
-			WebElement element501011 = driver.findElement(By.xpath("(//button[contains(text(),'Consult an Expert')])[1]"));
+			WebElement element501011 = driver
+					.findElement(By.xpath("(//button[contains(text(),'Consult an Expert')])[1]"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
-			driver.findElement(By.xpath("(//div[@class='styles_content__g4N5_'])[4]")).click();
+			
+			wait.until(
+					ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='styles_headingg___9Kcx'])[4]"))).click();
+			
 			long finish2 = System.currentTimeMillis();
 			long totalTime2 = finish2 - start2;
 			System.out.println("Total Time for page load - " + totalTime2);
 
 			test.log(Status.PASS, "Enter  company name page" + totalTime2 + "ms");
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
-
+					
+			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']")).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']")).click();
+			Thread.sleep(5000);
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_MINUS);
 			robot.keyRelease(KeyEvent.VK_MINUS);
 			robot.keyRelease(KeyEvent.VK_CONTROL);
-			Thread.sleep(3000);
-			long start3 = System.currentTimeMillis();
-			driver.findElement(By.xpath("//div[@class='styles_btnCta__Vt6zM']")).click();
-			driver.findElement(By.xpath("(//div[@class='nav-item'])[1]")).click();
-			long finish3 = System.currentTimeMillis();
-			long totalTime3 = finish3 - start3;
-			System.out.println("Total Time for page load - " + totalTime2);
-
-			test.log(Status.PASS, "Payment Cart Page  Time for load " + totalTime2 + "ms");
-
-			
-			driver.findElement(By.xpath("//input[@id='gpay']")).click();
-			driver.findElement(By.xpath("//button[@id='btn-gpay']")).click();
-			Thread.sleep(3000);
-			try {
-
-				driver.findElement(By.xpath("//i[@class='back']")).click();
-				try {
-					driver.switchTo().alert().accept();
-				} catch (Exception Z) {
-					System.out.println(Z);
-				}
-				// driver.findElement(By.xpath("//i[@class='back']")).click();
-				driver.findElement(By.xpath("//button[contains(text(),'YES, CANCEL')]")).click();
-				driver.switchTo().alert().accept();
-
-			} catch (Exception e) {
-				System.out.println(e);
-			}
-
-		} catch (Exception MyIntrest1) {
-
-			test.log(Status.FAIL, "Payment Cart Page");
-			System.out.println(MyIntrest1);
-		}
-		try {
-			driver.switchTo().alert().accept();
-		} catch (Exception Alert34) {
-			System.out.println(Alert34);
-		}
-		Thread.sleep(4500);
+			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
+			Thread.sleep(5000);
 	}
+			
 
 	public void helpdesk(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport,
 			String Helpdeskuserid, String helpdeskpassword) throws InterruptedException {
@@ -472,7 +438,7 @@ findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
-			element501011.sendKeys("9789955331");
+			element501011.sendKeys("91"+ Date12);
 			driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
 			String ticket3 = driver
 					.findElement(
