@@ -63,7 +63,7 @@ public class Base extends HelpdeskPageobject {
 
 	public void PrivateLimited(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws IOException, InterruptedException, AWTException {
-		SimpleDateFormat dateFormat1PrivateLimited = new SimpleDateFormat("wwyyyyhh");
+		SimpleDateFormat dateFormat1PrivateLimited = new SimpleDateFormat("wwyyyyhhmm");
 		String Date11PrivateLimited = dateFormat1PrivateLimited.format(new Date());
 		test = extentreport.createTest("Private Limited Company");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -87,7 +87,7 @@ public class Base extends HelpdeskPageobject {
 
 		LoginPageobjects.Phonenumber.click();
 
-		LoginPageobjects.Phonenumber.sendKeys("94" + Date12);
+		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
 		Thread.sleep(3000);
 
 		WebElement element310 = driver.findElement(By.xpath("//input[@placeholder='City*']"));
@@ -174,7 +174,7 @@ public class Base extends HelpdeskPageobject {
 
 	public void GstRegistration(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws InterruptedException, AWTException, IOException {
-		SimpleDateFormat dateFormat1GstRegistration = new SimpleDateFormat("wwyyyyhh");
+		SimpleDateFormat dateFormat1GstRegistration = new SimpleDateFormat("wwmmyyyyhhmm");
 		String Date1GstRegistration = dateFormat1GstRegistration.format(new Date());
 		test = extentreport.createTest("GST Registration");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -195,7 +195,7 @@ public class Base extends HelpdeskPageobject {
 
 		findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 
-		LoginPageobjects.Phonenumber.sendKeys("92" + Date12);
+		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
 		Thread.sleep(2000);
 		WebElement findElement2 = driver.findElement(By.xpath("//input[@placeholder='City']"));
 		JavascriptExecutor findElement54 = (JavascriptExecutor) driver;
@@ -285,44 +285,12 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 		System.out.println("Mobile OTP verification page - " + totalTime21);
 
 		test.log(Status.PASS, "Mobile OTP verification page" + totalTime21);
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_A);
-			robot.keyRelease(KeyEvent.VK_A);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_DELETE);
-			robot.keyRelease(KeyEvent.VK_DELETE);
-			driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).sendKeys("9789955331");
-			driver.findElement(By.xpath("//button[contains(text(),'Send OTP')]")).click();
-			Thread.sleep(1500);
-			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[1]"))
-					.sendKeys("0");
-			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[2]"))
-					.sendKeys("0");
-			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[3]"))
-					.sendKeys("0");
-			driver.findElement(By.xpath("(//div[@class='styles_boxes__yq8YR false false']/child::input)[4]"))
-					.sendKeys("0");
-			Thread.sleep(3000);
-		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		long start211 = System.currentTimeMillis();
-		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
-		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to pay')]")));
-		driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
-
-		long finish2111 = System.currentTimeMillis();
-		long totalTime2111 = finish2111 - start211;
-		System.out.println("Total Time for page load - " + totalTime2111);
-
+		
 	}
 
 	public void TrademarkRegistration(WebDriver driver, String Username, String Mobilenumber,
 			ExtentReports extentreport) throws InterruptedException, AWTException, IOException {
-		SimpleDateFormat dateFormat1TrademarkRegistration = new SimpleDateFormat("wwyyyyhh");
+		SimpleDateFormat dateFormat1TrademarkRegistration = new SimpleDateFormat("mmwwyyyyhhmm");
 		String Date1TrademarkRegistration = dateFormat1TrademarkRegistration.format(new Date());
 		test = extentreport.createTest("Trademark Registration");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -347,7 +315,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 		LoginPageobjects.PhonenumberTrademarkIP.click();
 
-		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("93" + Date12);
+		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("91" + Date12);
 		Thread.sleep(2000);
 		
 		WebElement findElement12w = driver.findElement(By.xpath("//input[@placeholder='City']"));
@@ -442,7 +410,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
-			element501011.sendKeys("shakthi" + Date1TrademarkRegistration1 + "@yopmail.com");
+			element501011.sendKeys("91" + Date12);
 			driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
 			String ticket3 = driver
 					.findElement(
