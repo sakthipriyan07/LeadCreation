@@ -63,7 +63,7 @@ public class Base extends HelpdeskPageobject {
 
 	public void PrivateLimited(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws IOException, InterruptedException, AWTException {
-		SimpleDateFormat dateFormat1PrivateLimited = new SimpleDateFormat("MMddyyMMS");
+		SimpleDateFormat dateFormat1PrivateLimited = new SimpleDateFormat("wwyyyyhh");
 		String Date11PrivateLimited = dateFormat1PrivateLimited.format(new Date());
 		test = extentreport.createTest("Private Limited Company");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -87,7 +87,7 @@ public class Base extends HelpdeskPageobject {
 
 		LoginPageobjects.Phonenumber.click();
 
-		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
+		LoginPageobjects.Phonenumber.sendKeys("94" + Date12);
 		Thread.sleep(3000);
 
 		WebElement element310 = driver.findElement(By.xpath("//input[@placeholder='City*']"));
@@ -174,7 +174,7 @@ public class Base extends HelpdeskPageobject {
 
 	public void GstRegistration(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws InterruptedException, AWTException, IOException {
-		SimpleDateFormat dateFormat1GstRegistration = new SimpleDateFormat("MMddyyMMS");
+		SimpleDateFormat dateFormat1GstRegistration = new SimpleDateFormat("wwyyyyhh");
 		String Date1GstRegistration = dateFormat1GstRegistration.format(new Date());
 		test = extentreport.createTest("GST Registration");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -195,7 +195,7 @@ public class Base extends HelpdeskPageobject {
 
 		findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
 
-		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
+		LoginPageobjects.Phonenumber.sendKeys("92" + Date12);
 		Thread.sleep(2000);
 		WebElement findElement2 = driver.findElement(By.xpath("//input[@placeholder='City']"));
 		JavascriptExecutor findElement54 = (JavascriptExecutor) driver;
@@ -322,7 +322,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 	public void TrademarkRegistration(WebDriver driver, String Username, String Mobilenumber,
 			ExtentReports extentreport) throws InterruptedException, AWTException, IOException {
-		SimpleDateFormat dateFormat1TrademarkRegistration = new SimpleDateFormat("MMddyyMMS");
+		SimpleDateFormat dateFormat1TrademarkRegistration = new SimpleDateFormat("wwyyyyhh");
 		String Date1TrademarkRegistration = dateFormat1TrademarkRegistration.format(new Date());
 		test = extentreport.createTest("Trademark Registration");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -347,7 +347,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 		LoginPageobjects.PhonenumberTrademarkIP.click();
 
-		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("91" + Date12);
+		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("93" + Date12);
 		Thread.sleep(2000);
 		
 		WebElement findElement12w = driver.findElement(By.xpath("//input[@placeholder='City']"));
@@ -410,6 +410,10 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 	public void helpdesk(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport,
 			String Helpdeskuserid, String helpdeskpassword) throws InterruptedException {
+		
+		
+			SimpleDateFormat dateFormat1TrademarkRegistration1 = new SimpleDateFormat("wwyyyyhh");
+			String Date1TrademarkRegistration1 = dateFormat1TrademarkRegistration1.format(new Date());
 		test = extentreport.createTest("HelpDesk lead Verification Result");
 		driver.get("https://helpdesk.vakilsearch.com/login");
 
@@ -438,7 +442,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
-			element501011.sendKeys("91"+ Date12);
+			element501011.sendKeys("shakthi" + Date1TrademarkRegistration1 + "@yopmail.com");
 			driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
 			String ticket3 = driver
 					.findElement(
