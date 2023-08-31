@@ -263,10 +263,15 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 			test.log(Status.PASS, "Payment Cart PageTotal Time for page load " + totalTime1);
 			LoginPageobjects.Next.click();
+			Thread.sleep(4000);
 			System.out.println(e);
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]")));
-			LoginPageobjects.noidonthaveacompanyNameGSTRig.click();
+		
+			
+			JavascriptExecutor executor34 = (JavascriptExecutor) driver;
+			executor34.executeScript("arguments[0].click();", noidonthaveacompanyNameGSTRig);
+		//	LoginPageobjects.noidonthaveacompanyNameGSTRig.click();
 			Thread.sleep(2000);
 			LoginPageobjects.Next.click();
 			Thread.sleep(3000);
