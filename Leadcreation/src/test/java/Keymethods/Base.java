@@ -413,7 +413,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 		Thread.sleep(8000);
 		try {
 			wait.until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='search']")));
+					ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='search']")));
 			
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
