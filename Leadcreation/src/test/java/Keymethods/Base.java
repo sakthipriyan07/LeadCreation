@@ -41,7 +41,7 @@ public class Base extends HelpdeskPageobject {
 
 	public void Base1(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
 			throws InterruptedException, AWTException, IOException {
-		test = extentreport.createTest("Vakilsearch Test");
+		test = extentreport.createTest("Vakilsearch website landing");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		driver.manage().window().maximize();
 
@@ -80,7 +80,7 @@ public class Base extends HelpdeskPageobject {
 		long finish = System.currentTimeMillis();
 		long totalTime = finish - start;
 		System.out.println("Total Time for page load - " + totalTime);
-		test.log(Status.PASS, "Lead form page " + totalTime + "ms");
+		test.log(Status.PASS, "PVT Page redirection " + totalTime + "ms");
 		System.out.println(driver.getTitle().toString());
 
 		LoginPageobjects.Email.sendKeys("shakthi" + Date11PrivateLimited + "@yopmail.com");
@@ -131,7 +131,7 @@ public class Base extends HelpdeskPageobject {
 		long totalTime1 = finish1 - start1;
 		System.out.println("Total Time for page load - " + totalTime1);
 
-		test.log(Status.PASS, "Enter  company name page " + totalTime1 + "ms");
+		test.log(Status.PASS, "Enter  company name page redirection " + totalTime1 + "ms");
 
 		Thread.sleep(1500);
 
@@ -153,11 +153,13 @@ public class Base extends HelpdeskPageobject {
 		long start21 = System.currentTimeMillis();
 		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
 				.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Next')]"))).getText();
+		
 		long finish21 = System.currentTimeMillis();
 		long totalTime21 = finish21 - start21;
 		System.out.println("Total Time for page load - " + totalTime21);
 
-		test.log(Status.PASS, "Mobile OTP verification page " + totalTime21 + "ms");
+		test.log(Status.PASS, "Mobile OTP Redirection " + totalTime21 + "ms");
 
 		long start211 = System.currentTimeMillis();
 		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
@@ -169,7 +171,7 @@ public class Base extends HelpdeskPageobject {
 		long totalTime2111 = finish2111 - start211;
 		System.out.println("Total Time for page load - " + totalTime21);
 
-		test.log(Status.PASS, "Mobile OTP verification page " + totalTime2111 + "ms");
+		test.log(Status.PASS, "PaymentPage redirection " + totalTime2111 + "ms");
 	}
 
 	public void GstRegistration(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport)
@@ -190,7 +192,7 @@ public class Base extends HelpdeskPageobject {
 		long totalTime = finish - start;
 		System.out.println("Total Time for page load - " + totalTime);
 
-		test.log(Status.PASS, "Lead form page  " + totalTime + "ms");
+		test.log(Status.PASS, "GST registration Page redirection  " + totalTime + "ms");
 		// HelpdeskPageobject.GSTRegistration.click();
 
 		findElement.sendKeys("shakthi" + Date1GstRegistration + "@yopmail.com");
@@ -224,13 +226,14 @@ public class Base extends HelpdeskPageobject {
 		WebElement element300 = driver.findElement(By.xpath("(//button[@class='styles_actionBtn__XNtcU'])[1]"));
 		JavascriptExecutor executor300 = (JavascriptExecutor) driver;
 		executor300.executeScript("arguments[0].click();", element300);
-		
+		wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")));
 
 		System.out.println("succes1");
 
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
-		System.out.println("Age of Business selection page " + totalTime1);
+		System.out.println("Age of Business Page Redirection " + totalTime1);
 
 		Thread.sleep(3500);
 
@@ -287,7 +290,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 		driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
 		long finish21 = System.currentTimeMillis();
 		long totalTime21 = finish21 - start21;
-		System.out.println("Mobile OTP verification page - " + totalTime21);
+		System.out.println("Payment Page Redirection - " + totalTime21);
 
 		test.log(Status.PASS, "Mobile OTP verification page" + totalTime21);
 		
@@ -313,7 +316,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 		long totalTime = finish - start;
 		System.out.println("Total Time for page load - " + totalTime);
 
-		test.log(Status.PASS, "Trademark Registration Time for page load " + totalTime + "ms");
+		test.log(Status.PASS, "Trademark Registration Redirection " + totalTime + "ms");
 		// HelpdeskPageobject.GSTRegistration.click();
 
 		LoginPageobjects.Email.sendKeys("shakthi" + Date1TrademarkRegistration + "@yopmail.com");
@@ -365,7 +368,7 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 			long totalTime2 = finish2 - start2;
 			System.out.println("Total Time for page load - " + totalTime2);
 
-			test.log(Status.PASS, "Enter  company name page" + totalTime2 + "ms");
+			test.log(Status.PASS, "Enter  company name page Redirection" + totalTime2 + "ms");
 			Thread.sleep(2000);
 					
 			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']")).click();
@@ -376,8 +379,18 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 			robot.keyPress(KeyEvent.VK_MINUS);
 			robot.keyRelease(KeyEvent.VK_MINUS);
 			robot.keyRelease(KeyEvent.VK_CONTROL);
+			long start290 = System.currentTimeMillis();
 			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
 			Thread.sleep(5000);
+			long finish290 = System.currentTimeMillis();
+			long totalTime290 = finish290 - start290;
+			System.out.println("Total Time for page load - " + totalTime290);
+
+			test.log(Status.PASS, "Payment page Redirection" + totalTime290 + "ms");
+			Thread.sleep(2000);
+			
+			
+			
 	}
 			
 
