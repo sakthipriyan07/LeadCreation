@@ -97,7 +97,8 @@ public class Base extends HelpdeskPageobject {
 		LoginPageobjects.City.sendKeys("chen");
 
 		Thread.sleep(6000);
-
+		wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]")));
 		WebElement element31 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		JavascriptExecutor executor31 = (JavascriptExecutor) driver;
 		executor31.executeScript("arguments[0].click();", element31);
@@ -226,8 +227,7 @@ public class Base extends HelpdeskPageobject {
 		WebElement element300 = driver.findElement(By.xpath("(//button[@class='styles_actionBtn__XNtcU'])[1]"));
 		JavascriptExecutor executor300 = (JavascriptExecutor) driver;
 		executor300.executeScript("arguments[0].click();", element300);
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")));
+		
 
 		System.out.println("succes1");
 
