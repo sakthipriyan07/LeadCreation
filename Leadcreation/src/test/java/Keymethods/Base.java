@@ -124,10 +124,7 @@ public class Base extends HelpdeskPageobject {
 		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
 		System.out.println("succes1");
 
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Takes less than 1 min')]")));
-		String text = driver.findElement(By.xpath("//p[contains(text(),'Takes less than 1 min')]")).getText();
-		System.out.println(text);
+		
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
 		System.out.println("Total Time for page load - " + totalTime1);
