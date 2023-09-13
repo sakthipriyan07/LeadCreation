@@ -97,8 +97,7 @@ public class Base extends HelpdeskPageobject {
 		LoginPageobjects.City.sendKeys("chen");
 
 		Thread.sleep(6000);
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]")));
 		WebElement element31 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		JavascriptExecutor executor31 = (JavascriptExecutor) driver;
 		executor31.executeScript("arguments[0].click();", element31);
@@ -124,7 +123,6 @@ public class Base extends HelpdeskPageobject {
 		driver.findElement(By.xpath("//button[@class='fullwidth btn btn-primary']")).click();
 		System.out.println("succes1");
 
-		
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
 		System.out.println("Total Time for page load - " + totalTime1);
@@ -132,7 +130,7 @@ public class Base extends HelpdeskPageobject {
 		test.log(Status.PASS, "Enter  company name page redirection " + totalTime1 + "ms");
 
 		Thread.sleep(1500);
-
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Skip it for now')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Skip it for now')]")).click();
 		Thread.sleep(2000);
 		LoginPageobjects.Ageofbusiness.click();
@@ -152,7 +150,7 @@ public class Base extends HelpdeskPageobject {
 		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
 				.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Next')]"))).getText();
-		
+
 		long finish21 = System.currentTimeMillis();
 		long totalTime21 = finish21 - start21;
 		System.out.println("Total Time for page load - " + totalTime21);
@@ -206,8 +204,7 @@ public class Base extends HelpdeskPageobject {
 		WebElement findElement222 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		JavascriptExecutor findElement5422 = (JavascriptExecutor) driver;
 		findElement5422.executeScript("arguments[0].click();", findElement222);
-		
-	
+
 		Robot robot = new Robot();
 
 //		if (LoginPageobjects.whatsapptogleoff.isSelected()) {
@@ -220,11 +217,10 @@ public class Base extends HelpdeskPageobject {
 
 		Thread.sleep(2000);
 		long start1 = System.currentTimeMillis();
-		
+
 		WebElement element300 = driver.findElement(By.xpath("(//button[@class='styles_actionBtn__XNtcU'])[1]"));
 		JavascriptExecutor executor300 = (JavascriptExecutor) driver;
 		executor300.executeScript("arguments[0].click();", element300);
-		
 
 		System.out.println("succes1");
 
@@ -235,10 +231,10 @@ public class Base extends HelpdeskPageobject {
 		Thread.sleep(3500);
 
 		try {
-			wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")));
-driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")).click();
-	
+			wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div")));
+			driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company name')]/parent::div"))
+					.click();
 
 			test.log(Status.PASS, "Age of Business selection page " + totalTime1 + "ms");
 			Thread.sleep(2000);
@@ -267,11 +263,10 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 			System.out.println(e);
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//label[contains(text(),'No, I don’t have a company name')]")));
-		
-			
+
 			JavascriptExecutor executor34 = (JavascriptExecutor) driver;
 			executor34.executeScript("arguments[0].click();", noidonthaveacompanyNameGSTRig);
-		//	LoginPageobjects.noidonthaveacompanyNameGSTRig.click();
+			// LoginPageobjects.noidonthaveacompanyNameGSTRig.click();
 			Thread.sleep(2000);
 			LoginPageobjects.Next.click();
 			Thread.sleep(3000);
@@ -282,15 +277,14 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 		long start21 = System.currentTimeMillis();
 		LoginPageobjects.Next.click();
-		wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("//input[@class='styles_otpInput__5bXLj']")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='styles_otpInput__5bXLj']")));
 		driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
 		long finish21 = System.currentTimeMillis();
 		long totalTime21 = finish21 - start21;
 		System.out.println("Payment Page Redirection - " + totalTime21);
 
 		test.log(Status.PASS, "Mobile OTP verification page" + totalTime21);
-		
+
 	}
 
 	public void TrademarkRegistration(WebDriver driver, String Username, String Mobilenumber,
@@ -322,19 +316,18 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 
 		LoginPageobjects.PhonenumberTrademarkIP.sendKeys("91" + Date12);
 		Thread.sleep(2000);
-		
+
 		WebElement findElement12w = driver.findElement(By.xpath("//input[@placeholder='City']"));
 		JavascriptExecutor findElement122w = (JavascriptExecutor) driver;
 		findElement122w.executeScript("arguments[0].click();", findElement12w);
-	
+
 		LoginPageobjects.CityTrademark.sendKeys("chen");
 
 		Thread.sleep(10000);
 		WebElement findElement12 = driver.findElement(By.xpath("//div[contains(text(),'Chennai, Tamil Nadu')]"));
 		JavascriptExecutor findElement122 = (JavascriptExecutor) driver;
 		findElement122.executeScript("arguments[0].click();", findElement12);
-		
-		
+
 		Robot robot = new Robot();
 
 //		if (LoginPageobjects.whatsapptogleoff.isSelected()) {
@@ -344,59 +337,57 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 //System.out.println("failed");
 //			test.log(Status.FAIL, "whatsapptogleoff Failed");
 //		}
-	//	LoginPageobjects.toggleTrademark.click();
+		// LoginPageobjects.toggleTrademark.click();
 		Thread.sleep(2000);
 
 		// driver.findElement(By.xpath("(//button[contains(text(),'Consult an
 		// Expert')])[1]")).click();
 //System.out.println("succes1");
 
-		
-			long start2 = System.currentTimeMillis();
-			WebElement element501011 = driver
-					.findElement(By.xpath("(//button[contains(text(),'Consult an Expert')])[1]"));
-			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
-			executor501011.executeScript("arguments[0].click();", element501011);
-			
-			wait.until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='styles_headingg___9Kcx'])[4]"))).click();
-			
-			long finish2 = System.currentTimeMillis();
-			long totalTime2 = finish2 - start2;
-			System.out.println("Total Time for page load - " + totalTime2);
+		long start2 = System.currentTimeMillis();
+		WebElement element501011 = driver.findElement(By.xpath("(//button[contains(text(),'Consult an Expert')])[1]"));
+		JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
+		executor501011.executeScript("arguments[0].click();", element501011);
 
-			test.log(Status.PASS, "Enter  company name page Redirection" + totalTime2 + "ms");
-			Thread.sleep(2000);
-					
-			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']")).click();
-			Thread.sleep(5000);
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_MINUS);
-			robot.keyRelease(KeyEvent.VK_MINUS);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			long start290 = System.currentTimeMillis();
-			driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
-			Thread.sleep(5000);
-			long finish290 = System.currentTimeMillis();
-			long totalTime290 = finish290 - start290;
-			System.out.println("Total Time for page load - " + totalTime290);
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='styles_headingg___9Kcx'])[4]")))
+				.click();
 
-			test.log(Status.PASS, "Payment page Redirection" + totalTime290 + "ms");
-			Thread.sleep(2000);
-			
-			
-			
+		long finish2 = System.currentTimeMillis();
+		long totalTime2 = finish2 - start2;
+		System.out.println("Total Time for page load - " + totalTime2);
+
+		test.log(Status.PASS, "Enter  company name page Redirection" + totalTime2 + "ms");
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
+				.click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
+				.click();
+		Thread.sleep(5000);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_MINUS);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		long start290 = System.currentTimeMillis();
+		driver.findElement(By.xpath("//span[contains(text(),'Proceed to pay')]")).click();
+		Thread.sleep(5000);
+		long finish290 = System.currentTimeMillis();
+		long totalTime290 = finish290 - start290;
+		System.out.println("Total Time for page load - " + totalTime290);
+
+		test.log(Status.PASS, "Payment page Redirection" + totalTime290 + "ms");
+		Thread.sleep(2000);
+
 	}
-			
 
 	public void helpdesk(WebDriver driver, String Username, String Mobilenumber, ExtentReports extentreport,
 			String Helpdeskuserid, String helpdeskpassword) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		
-			SimpleDateFormat dateFormat1TrademarkRegistration1 = new SimpleDateFormat("wwyyyyhh");
-			String Date1TrademarkRegistration1 = dateFormat1TrademarkRegistration1.format(new Date());
+
+		SimpleDateFormat dateFormat1TrademarkRegistration1 = new SimpleDateFormat("wwyyyyhh");
+		String Date1TrademarkRegistration1 = dateFormat1TrademarkRegistration1.format(new Date());
 		test = extentreport.createTest("HelpDesk lead Verification Result");
 		driver.get("https://helpdesk.vakilsearch.com/login");
 
@@ -422,9 +413,8 @@ driver.findElement(By.xpath("//label[contains(text(),'No, I don’t have a company
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(8000);
 		try {
-			wait.until(
-					ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='search']")));
-			
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='search']")));
+
 			WebElement element501011 = driver.findElement(By.xpath("//input[@id='search']"));
 			JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 			executor501011.executeScript("arguments[0].click();", element501011);
