@@ -67,11 +67,11 @@ public class Base extends HelpdeskPageobject {
 		String Date11PrivateLimited = dateFormat1PrivateLimited.format(new Date());
 		test = extentreport.createTest("Private Limited Company");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Business Setup']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//p[contains(text(),'Business Setup')])[1]")));
 		LoginPageobjects.Businesssetup.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//b[normalize-space()='Private Limited Company']")));
+				.visibilityOfElementLocated(By.xpath("(//a[contains(text(),'Private Limited Company')])[1]")));
 		long start = System.currentTimeMillis();
 		LoginPageobjects.Pvtdcompany.click();
 		wait.until(
@@ -85,7 +85,11 @@ public class Base extends HelpdeskPageobject {
 
 		LoginPageobjects.Email.sendKeys("shakthi" + Date11PrivateLimited + "@yopmail.com");
 
-		LoginPageobjects.Phonenumber.click();
+		
+		WebElement phonenumber = driver.findElement(By.xpath("//input[@id='service_form_primary_mobile_number']"));
+		JavascriptExecutor phonenumber1 = (JavascriptExecutor) driver;
+		phonenumber1.executeScript("arguments[0].click();", phonenumber);
+		//	LoginPageobjects.Phonenumber.click();
 
 		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
 		Thread.sleep(3000);
@@ -147,8 +151,7 @@ public class Base extends HelpdeskPageobject {
 		// .click();
 
 		long start21 = System.currentTimeMillis();
-		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
-				.click();
+		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Next')]"))).getText();
 
 		long finish21 = System.currentTimeMillis();
@@ -218,7 +221,7 @@ public class Base extends HelpdeskPageobject {
 		Thread.sleep(2000);
 		long start1 = System.currentTimeMillis();
 
-		WebElement element300 = driver.findElement(By.xpath("(//button[@class='styles_actionBtn__XNtcU'])[1]"));
+		WebElement element300 = driver.findElement(By.xpath("(//button[contains(text(),'Get Started')])[1]"));
 		JavascriptExecutor executor300 = (JavascriptExecutor) driver;
 		executor300.executeScript("arguments[0].click();", element300);
 
@@ -277,8 +280,8 @@ public class Base extends HelpdeskPageobject {
 
 		long start21 = System.currentTimeMillis();
 		LoginPageobjects.Next.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='styles_otpInput__5bXLj']")));
-		driver.findElement(By.xpath("//input[@class='styles_otpInput__5bXLj']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Send OTP')]")));
+	
 		long finish21 = System.currentTimeMillis();
 		long totalTime21 = finish21 - start21;
 		System.out.println("Payment Page Redirection - " + totalTime21);
@@ -296,7 +299,7 @@ public class Base extends HelpdeskPageobject {
 		HelpdeskPageobject.TrademarkIP.click();
 
 		long start = System.currentTimeMillis();
-		WebElement element3 = driver.findElement(By.xpath("(//b[contains(text(),'Trademark Registration')])"));
+		WebElement element3 = driver.findElement(By.xpath("(//a[contains(text(),'Trademark Registration')])[1]"));
 		JavascriptExecutor executor3 = (JavascriptExecutor) driver;
 		executor3.executeScript("arguments[0].click();", element3);
 		wait.until(
@@ -350,7 +353,7 @@ public class Base extends HelpdeskPageobject {
 		executor501011.executeScript("arguments[0].click();", element501011);
 
 		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='styles_headingg___9Kcx'])[4]")))
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='radio'])[1]")))
 				.click();
 
 		long finish2 = System.currentTimeMillis();
@@ -360,10 +363,10 @@ public class Base extends HelpdeskPageobject {
 		test.log(Status.PASS, "Enter  company name page Redirection" + totalTime2 + "ms");
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]"))
 				.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']"))
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]"))
 				.click();
 		Thread.sleep(5000);
 		robot.keyPress(KeyEvent.VK_CONTROL);

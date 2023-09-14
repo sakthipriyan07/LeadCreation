@@ -48,10 +48,10 @@ public class HomescreenPageobject extends NewCRMPageobject {
 	@FindBy(xpath = "//button[contains(text(),'YES, CANCEL')]")
 	public static WebElement Yestocancel ;
 	
-	@FindBy(xpath = "//a[contains(text(),'Tax & Compliance')]")
+	@FindBy(xpath = "(//p[contains(text(),'Tax & Compliance')])[1]")
 	public static WebElement TaxCompliance ;
 	
-	@FindBy(xpath = "(//a[contains(text(),'GST Registration')])[1]")
+	@FindBy(xpath = "(//a[contains(text(),'Trademark Registration')])[1]")
 	public static WebElement GSTRegistration ;
 	
 	@FindBy(xpath = "//div[@class='switch_bg bg-success']")
@@ -63,7 +63,7 @@ public class HomescreenPageobject extends NewCRMPageobject {
 	@FindBy(xpath = "//label[contains(text(),'No, I don’t have a company name')]")
 	public static WebElement NextGSTReg ;
 	
-	@FindBy(xpath = "//a[contains(text(),'Trademark & IP')]")
+	@FindBy(xpath = "(//p[contains(text(),'Trademark & IP')])[1]")
 	public static WebElement TrademarkIP ;
 	
 	@FindBy(xpath = "//input[@placeholder='Mobile Number']")

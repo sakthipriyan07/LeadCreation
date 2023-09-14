@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPageobjects extends HomescreenPageobject {
 
-	@FindBy(xpath = "//a[normalize-space()='Business Setup']")
+	@FindBy(xpath = "(//p[contains(text(),'Business Setup')])[1]")
 	public static WebElement Businesssetup;
 
-	@FindBy(xpath = "//b[normalize-space()='Private Limited Company']")
+	@FindBy(xpath = "(//a[contains(text(),'Private Limited Company')])[1]")
 	public static WebElement Pvtdcompany;
 
 	@FindBy(xpath = "//input[@placeholder='City*']")
@@ -20,7 +20,7 @@ public class LoginPageobjects extends HomescreenPageobject {
 	@FindBy(xpath = "//button[@class='fullwidth btn btn-primary']")
 	public static WebElement talktoanexpert;
 
-	@FindBy(xpath = "//button[@class='styles_customBtn__nb6mV styles_next__NvT8q false false ']")
+	@FindBy(xpath = "//button[@class='styles_customBtn__NQoKm styles_next__ckVs9 false false ']")
 	public static WebElement Next;
 
 	@FindBy(xpath = "//input[@id='service_form_primary_email']")
