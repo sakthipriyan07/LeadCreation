@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-13T11:50:09 IST" name="Default suite" finished-at="2023-09-13T11:51:12 IST" duration-ms="62915">
+  <suite started-at="2023-09-14T12:45:00 IST" name="Default suite" finished-at="2023-09-14T12:47:36 IST" duration-ms="156619">
     <groups>
     </groups>
-    <test started-at="2023-09-13T11:50:09 IST" name="Default test" finished-at="2023-09-13T11:51:12 IST" duration-ms="62915">
+    <test started-at="2023-09-14T12:45:00 IST" name="Default test" finished-at="2023-09-14T12:47:36 IST" duration-ms="156619">
       <class name="LeadCreation.Leadcreation">
-        <test-method is-config="true" signature="Login()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:50:08 IST" name="Login" finished-at="2023-09-13T11:50:09 IST" duration-ms="624" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:44:59 IST" name="Login" finished-at="2023-09-14T12:45:00 IST" duration-ms="733" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method is-config="true" signature="Max()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:50:09 IST" name="Max" finished-at="2023-09-13T11:50:12 IST" duration-ms="3377" status="PASS">
+        <test-method is-config="true" signature="Max()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:45:00 IST" name="Max" finished-at="2023-09-14T12:45:05 IST" duration-ms="5246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Max -->
-        <test-method is-config="true" signature="url()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:50:12 IST" name="url" finished-at="2023-09-13T11:50:16 IST" duration-ms="3117" status="PASS">
+        <test-method is-config="true" signature="url()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:45:05 IST" name="url" finished-at="2023-09-14T12:45:08 IST" duration-ms="3160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method signature="Customercreation100(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:50:16 IST" name="Customercreation100" data-provider="itemsdata" finished-at="2023-09-13T11:51:11 IST" duration-ms="55014" status="FAIL">
+        <test-method signature="Customercreation100(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:45:09 IST" name="Customercreation100" data-provider="itemsdata" finished-at="2023-09-14T12:47:35 IST" duration-ms="146793" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -112,89 +112,18 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //span[contains(text(),'Skip it for now')] (tried for 30 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //span[contains(text(),'Skip it for now')] (tried for 30 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at Keymethods.Base.PrivateLimited(Base.java:133)
-at LeadCreation.Leadcreation.Customercreation100(Leadcreation.java:124)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Skip it for now')]"}
-  (Session info: chrome=116.0.5845.180)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-RG609L7', ip: '172.31.98.253', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.180, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cab8b9c188dba31df49c61ab4b6d892c
-*** Element info: {Using=xpath, value=//span[contains(text(),'Skip it for now')]}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Customercreation100 -->
-        <test-method is-config="true" signature="close()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:51:11 IST" name="close" finished-at="2023-09-13T11:51:11 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:47:35 IST" name="close" finished-at="2023-09-14T12:47:35 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method is-config="true" signature="Report()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:51:11 IST" name="Report" finished-at="2023-09-13T11:51:12 IST" duration-ms="859" status="PASS">
+        <test-method is-config="true" signature="Report()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:47:35 IST" name="Report" finished-at="2023-09-14T12:47:36 IST" duration-ms="886" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Report -->
-        <test-method is-config="true" signature="Mail()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-13T11:51:12 IST" name="Mail" finished-at="2023-09-13T11:51:12 IST" duration-ms="446" status="PASS">
+        <test-method is-config="true" signature="Mail()[pri:0, instance:LeadCreation.Leadcreation@39529185]" started-at="2023-09-14T12:47:36 IST" name="Mail" finished-at="2023-09-14T12:47:36 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Mail -->
