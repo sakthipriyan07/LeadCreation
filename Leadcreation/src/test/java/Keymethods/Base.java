@@ -67,7 +67,8 @@ public class Base extends HelpdeskPageobject {
 		String Date11PrivateLimited = dateFormat1PrivateLimited.format(new Date());
 		test = extentreport.createTest("Private Limited Company");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//p[contains(text(),'Business Setup')])[1]")));
+		wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//p[contains(text(),'Business Setup')])[1]")));
 		LoginPageobjects.Businesssetup.click();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		wait.until(ExpectedConditions
@@ -85,11 +86,10 @@ public class Base extends HelpdeskPageobject {
 
 		LoginPageobjects.Email.sendKeys("shakthi" + Date11PrivateLimited + "@yopmail.com");
 
-		
 		WebElement phonenumber = driver.findElement(By.xpath("//input[@id='service_form_primary_mobile_number']"));
 		JavascriptExecutor phonenumber1 = (JavascriptExecutor) driver;
 		phonenumber1.executeScript("arguments[0].click();", phonenumber);
-		//	LoginPageobjects.Phonenumber.click();
+		// LoginPageobjects.Phonenumber.click();
 
 		LoginPageobjects.Phonenumber.sendKeys("91" + Date12);
 		Thread.sleep(3000);
@@ -151,7 +151,7 @@ public class Base extends HelpdeskPageobject {
 		// .click();
 
 		long start21 = System.currentTimeMillis();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Next')]"))).getText();
 
 		long finish21 = System.currentTimeMillis();
@@ -281,7 +281,7 @@ public class Base extends HelpdeskPageobject {
 		long start21 = System.currentTimeMillis();
 		LoginPageobjects.Next.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Send OTP')]")));
-	
+
 		long finish21 = System.currentTimeMillis();
 		long totalTime21 = finish21 - start21;
 		System.out.println("Payment Page Redirection - " + totalTime21);
@@ -352,9 +352,7 @@ public class Base extends HelpdeskPageobject {
 		JavascriptExecutor executor501011 = (JavascriptExecutor) driver;
 		executor501011.executeScript("arguments[0].click();", element501011);
 
-		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='radio'])[1]")))
-				.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@type='radio'])[1]"))).click();
 
 		long finish2 = System.currentTimeMillis();
 		long totalTime2 = finish2 - start2;
@@ -363,11 +361,9 @@ public class Base extends HelpdeskPageobject {
 		test.log(Status.PASS, "Enter  company name page Redirection" + totalTime2 + "ms");
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath("//p[contains(text(),'Next')]"))
-				.click();
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//p[contains(text(),'Next')]"))
-				.click();
+		driver.findElement(By.xpath("//p[contains(text(),'Next')]")).click();
 		Thread.sleep(5000);
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_MINUS);
