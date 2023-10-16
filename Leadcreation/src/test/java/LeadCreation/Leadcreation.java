@@ -124,7 +124,7 @@ public class Leadcreation {
 		base.PrivateLimited(driver, CrmUsernames, GRCMobileNumber, extentreport);
 		Thread.sleep(4000);
 	base.Base1(driver, CrmUsernames, GRCMobileNumber, extentreport);
-	base.GstRegistration(driver, CrmUsernames, GRCMobileNumber, extentreport);
+	base.GstRegistration(driver, CrmUsernames, GRCMobileNumber, CrmUserpassword, extentreport);
 		Thread.sleep(4000);
 		base.Base1(driver, CrmUsernames, GRCMobileNumber, extentreport);
 		base.TrademarkRegistration(driver, CrmUsernames, GRCMobileNumber, extentreport);
