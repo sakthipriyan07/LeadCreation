@@ -84,7 +84,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot1(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot1.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot1.png",
 						"Lead Form").build());
 		long finish = System.currentTimeMillis();
 		long totalTime = finish - start;
@@ -132,13 +132,13 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot2(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot2.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot2.png",
 						"Onboarding Page").build());
 		Thread.sleep(3500);
 		screenshot.screenshot2(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot2.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot2.png",
 						"CriticalNote").build());
 
 		try {
@@ -149,14 +149,14 @@ public class Base extends HelpdeskPageobject {
 			screenshot.screenshot3(driver, extentreport);
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot3.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot3.png",
 							"Age of Business selection page ").build());
 
 			Thread.sleep(2000);
 			screenshot.screenshot3(driver, extentreport);
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot3.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot3.png",
 							"Onboarding 2QA").build());
 			LoginPageobjects.Next.click();
 			Thread.sleep(3000);
@@ -177,7 +177,7 @@ public class Base extends HelpdeskPageobject {
 			screenshot.screenshot4(driver, extentreport);
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot4.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot4.png",
 							"New business").build());
 			System.out.println(e);
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[contains(text(),'New business')]")));
@@ -214,7 +214,7 @@ public class Base extends HelpdeskPageobject {
 			screenshot.screenshot5(driver, extentreport);
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot5.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot5.png",
 							"OTP Verification").build());
 			
 			driver.findElement(By.xpath("(//input[@type='number'])[2]")).sendKeys("0");
@@ -246,7 +246,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot6(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot6.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot6.png",
 						"Card Payment").build());
 		driver.findElement(By.xpath("//input[@name='cardExpiry']")).click();
 		driver.findElement(By.xpath("//input[@name='cardExpiry']")).sendKeys("1224");
@@ -277,7 +277,7 @@ public class Base extends HelpdeskPageobject {
 			screenshot.screenshot7(driver, extentreport);
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot7.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot7.png",
 							"Payu Payment Screen").build());
 			
 			
@@ -292,7 +292,7 @@ public class Base extends HelpdeskPageobject {
 			screenshot.screenshot8(driver, extentreport);
 			test.log(Status.PASS,
 					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot8.png",
+							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot8.png",
 							"New business").build());
 			driver.findElement(By.xpath("//input[@name='cardOwnerName']")).click();
 			driver.findElement(By.xpath("//input[@name='cardOwnerName']")).sendKeys("TESTING");
@@ -315,7 +315,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot9(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot9.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot9.png",
 						"Start application").build());
 
 	}
@@ -339,7 +339,7 @@ public class Base extends HelpdeskPageobject {
 	screenshot.screenshot10(driver, extentreport);
 	test.log(Status.PASS,
 			MediaEntityBuilder.createScreenCaptureFromPath(
-					"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot10.png",
+					"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot10.png",
 					"PVT Home Page").build());
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//input[@id='email'])[1]")));
 		WebElement emailidpvt = driver.findElement(By.xpath(
@@ -417,7 +417,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot11(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot11.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot11.png",
 						"Lead Creation").build());
 		long finish1 = System.currentTimeMillis();
 		long totalTime1 = finish1 - start1;
@@ -432,7 +432,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot12(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot12.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot12.png",
 						"Onboarding QA1").build());
 		LoginPageobjects.Ageofbusiness.click();
 		robot.keyPress(KeyEvent.VK_DOWN);
@@ -462,7 +462,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot13(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot13.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot13.png",
 						"Payment Screen").build());
 		wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to pay')]")));
@@ -470,7 +470,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot14(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot14.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot14.png",
 						"Cart Page redirection").build());
 		long finish2111 = System.currentTimeMillis();
 		long totalTime2111 = finish2111 - start211;
@@ -495,7 +495,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot15(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot15.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot15.png",
 						"Trademark Home page").build());
 		try {
 			Thread.sleep(4000);
@@ -520,7 +520,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot16(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot16.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot16.png",
 						"LeadCreation").build());
 
 		try {
@@ -573,7 +573,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot17(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot17.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot17.png",
 						"ONboarding").build());
 
 		test.log(Status.PASS, "Enter  company name page Redirection" + totalTime2 + "ms");
@@ -591,7 +591,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot18(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot18.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot18.png",
 						"Check status").build());
 
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
@@ -613,7 +613,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot19(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot19.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot19.png",
 						"Upload file Status").build());
 
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
@@ -637,7 +637,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot20(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot20.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot20.png",
 						"Payment page").build());
 
 		long start290 = System.currentTimeMillis();
@@ -652,7 +652,7 @@ public class Base extends HelpdeskPageobject {
 		screenshot.screenshot21(driver, extentreport);
 		test.log(Status.PASS,
 				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\VSWebPageAutomationTesting\\" + Date1 + "\\Screenshot21.png",
+						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot21.png",
 						"Cart page").build());
 
 	}
