@@ -203,7 +203,7 @@ public class Base extends HelpdeskPageobject {
 
 		long start21 = System.currentTimeMillis();
 		LoginPageobjects.Next.click();
-		try {
+		
 			wait.until(ExpectedConditions
 
 					.elementToBeClickable(By.xpath("//button[@class='styles_sendBtn__xW91N']")));
@@ -216,107 +216,7 @@ public class Base extends HelpdeskPageobject {
 					MediaEntityBuilder.createScreenCaptureFromPath(
 							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot5.png",
 							"OTP Verification").build());
-			
-			driver.findElement(By.xpath("(//input[@type='number'])[2]")).sendKeys("0");
-			driver.findElement(By.xpath("(//input[@type='number'])[3]")).sendKeys("0");
-			driver.findElement(By.xpath("(//input[@type='number'])[4]")).sendKeys("0");
-			driver.findElement(By.xpath("(//input[@type='number'])[5]")).sendKeys("0");
-			Thread.sleep(1500);
-			LoginPageobjects.Next.click();
-		} catch (Exception open) {
-
-			System.out.println("Experiment 2");
-		}
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_MINUS);
-		robot.keyPress(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_MINUS);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-
 		
-		
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='styles_btnContainer__u7tnS']")))
-				.click();
-
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//div[@class='styles_leftSection__isIh8 false'])[1]")).click();
-		driver.findElement(By.xpath("//input[@name='cardNumber']")).click();
-		driver.findElement(By.xpath("//input[@name='cardNumber']")).sendKeys("5123456789012346");
-		screenshot.screenshot6(driver, extentreport);
-		test.log(Status.PASS,
-				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot6.png",
-						"Card Payment").build());
-		driver.findElement(By.xpath("//input[@name='cardExpiry']")).click();
-		driver.findElement(By.xpath("//input[@name='cardExpiry']")).sendKeys("1224");
-		driver.findElement(By.xpath("//input[@name='cardCVV']")).click();
-		driver.findElement(By.xpath("//input[@name='cardCVV']")).sendKeys("123");
-
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-		try {
-
-			wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#password")));
-			driver.findElement(By.cssSelector("#password")).click();
-			driver.findElement(By.cssSelector("#password")).sendKeys("123456");
-
-			driver.findElement(By.xpath("//input[@id='submitBtn']")).click();
-			Thread.sleep(6000);
-//		List<String> all29 = new ArrayList<String>(driver.getWindowHandles());
-//		driver.switchTo().window(all29.get(0));
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(7000);
-			String parentWindow = driver.getWindowHandle();
-			driver.switchTo().window(parentWindow);
-			Thread.sleep(5000);
-
-		} catch (Exception uop) {
-			Thread.sleep(5000);
-			screenshot.screenshot7(driver, extentreport);
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot7.png",
-							"Payu Payment Screen").build());
-			
-			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='card-num'])[3]"))).click();
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='cardNumber']"))).click();
-
-			driver.findElement(By.xpath("//input[@name='cardNumber']")).sendKeys("5123456789012346");
-			driver.findElement(By.xpath("//input[@name='cardExpiry']")).click();
-			driver.findElement(By.xpath("//input[@name='cardExpiry']")).sendKeys("1224");
-			driver.findElement(By.xpath("//input[@name='cardCvv']")).click();
-			driver.findElement(By.xpath("//input[@name='cardCvv']")).sendKeys("123");
-			screenshot.screenshot8(driver, extentreport);
-			test.log(Status.PASS,
-					MediaEntityBuilder.createScreenCaptureFromPath(
-							"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot8.png",
-							"New business").build());
-			driver.findElement(By.xpath("//input[@name='cardOwnerName']")).click();
-			driver.findElement(By.xpath("//input[@name='cardOwnerName']")).sendKeys("TESTING");
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("(//button[@class='common-btn'])[5]")).click();
-			Thread.sleep(5000);
-			driver.findElement(By.cssSelector("#password")).click();
-			driver.findElement(By.cssSelector("#password")).sendKeys("123456");
-
-			driver.findElement(By.xpath("//input[@id='submitBtn']")).click();
-			Thread.sleep(6000);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(7000);
-			String parentWindow = driver.getWindowHandle();
-			driver.switchTo().window(parentWindow);
-			Thread.sleep(5000);
-		}
-		screenshot.screenshot9(driver, extentreport);
-		test.log(Status.PASS,
-				MediaEntityBuilder.createScreenCaptureFromPath(
-						"\\\\14.140.167.188\\Vakilsearch\\AutomatonLeadCreation1\\" + Date1 + "\\Screenshot9.png",
-						"Start application").build());
 
 	}
 
